@@ -11,7 +11,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun DevelopersSection() {
+fun GroupMembersSection() {
     Column(
         verticalArrangement = Arrangement.spacedBy(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -24,18 +24,18 @@ fun DevelopersSection() {
         Row(
             horizontalArrangement = Arrangement.spacedBy(16.dp),
         ) {
-            DeveloperCard(
+            GroupMemberCard(
                 "Kauê Miziara",
                 listOf("Backend, Mobile"),
                 listOf("C, C++, Rust, Java, Kotlin, C#, Python"),
             )
-            DeveloperCard("", listOf(""), listOf(""))
+            GroupMemberCard("", listOf(""), listOf(""))
         }
     }
 }
 
 @Preview(showBackground = true)
 @Composable
-private fun DevelopersSectionPreview() {
-    DevelopersSection()
+private fun GroupMembersSectionPreview() {
+    GroupMembersSection()
 }

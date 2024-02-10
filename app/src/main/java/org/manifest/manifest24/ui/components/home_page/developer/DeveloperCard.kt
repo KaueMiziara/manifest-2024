@@ -20,7 +20,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun DeveloperCard(
+fun GroupMemberCard(
     name: String, stacks: List<String>, languages: List<String>,
 ) {
     ElevatedCard(
@@ -63,8 +63,8 @@ fun DeveloperCard(
 
 @Preview(showBackground = true)
 @Composable
-private fun DeveloperCardPreview() {
-    DeveloperCard(
+private fun GroupMemberCardPreview() {
+    GroupMemberCard(
         "Abc",
         listOf("Mobile", "Backend"),
         listOf("Kotlin", "Java")

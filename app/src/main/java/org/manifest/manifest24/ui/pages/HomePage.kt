@@ -13,7 +13,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import org.manifest.manifest24.ui.components.ManifestAppBar
 import org.manifest.manifest24.ui.components.home_page.AboutProjectSection
-import org.manifest.manifest24.ui.components.home_page.developer.DevelopersSection
+import org.manifest.manifest24.ui.components.home_page.developer.GroupMembersSection
 
 @Composable
 fun HomePage() {
@@ -30,7 +30,7 @@ fun HomePage() {
         ) {
             AboutProjectSection()
             PlaceholderPage()
-            DevelopersSection()
+            GroupMembersSection()
         }
     }
 }
