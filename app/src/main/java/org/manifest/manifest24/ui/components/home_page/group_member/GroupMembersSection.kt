@@ -9,6 +9,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import org.manifest.manifest24.models.GroupMember
 
 @Composable
 fun GroupMembersSection() {
@@ -24,12 +25,20 @@ fun GroupMembersSection() {
         Row(
             horizontalArrangement = Arrangement.spacedBy(16.dp),
         ) {
-            GroupMemberCard(
+            val groupMemberKaue = GroupMember(
                 "Kauê Miziara",
                 listOf("Backend, Mobile"),
-                listOf("C, C++, Rust, Java, Kotlin, C#, Python"),
+                listOf("C, C++, Rust, Java, Kotlin, C#, Dart, Python"),
             )
-            GroupMemberCard("", listOf(""), listOf(""))
+
+            val groupMember2 = GroupMember(
+                "",
+                listOf(""),
+                listOf("")
+            )
+
+            GroupMemberCard(groupMemberKaue)
+            GroupMemberCard(groupMember2)
         }
     }
 }
