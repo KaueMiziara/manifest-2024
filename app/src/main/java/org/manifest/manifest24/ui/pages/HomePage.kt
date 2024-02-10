@@ -13,7 +13,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import org.manifest.manifest24.ui.components.ManifestAppBar
 import org.manifest.manifest24.ui.components.home_page.AboutProjectSection
-import org.manifest.manifest24.ui.components.home_page.developer.GroupMembersSection
+import org.manifest.manifest24.ui.components.home_page.group_member.GroupMembersSection
 
 @Composable
 fun HomePage() {

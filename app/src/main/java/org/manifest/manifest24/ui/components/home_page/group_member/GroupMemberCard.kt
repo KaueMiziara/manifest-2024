@@ -1,4 +1,4 @@
-package org.manifest.manifest24.ui.components.home_page.developer
+package org.manifest.manifest24.ui.components.home_page.group_member
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
