@@ -38,7 +38,8 @@ fun DeveloperCard() {
                 modifier = Modifier.size(64.dp)
             )
             Text(color = Color.White, text = "<name>")
-            Text(color = Color.White, text = "<description>")
+            Text(color = Color.White, text = "<stacks>")
+            Text(color = Color.White, text = "<languages>")
         }
     }
 }
