@@ -19,10 +19,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import org.manifest.manifest24.models.GroupMember
 
 @Composable
 fun GroupMemberCard(
-    name: String, stacks: List<String>, languages: List<String>,
+    groupMember: GroupMember
 ) {
     ElevatedCard(
         elevation = CardDefaults.cardElevation(6.dp),
@@ -47,17 +48,17 @@ fun GroupMemberCard(
                 color = Color.White,
                 textAlign = TextAlign.Center,
                 fontWeight = FontWeight.Bold,
-                text = name,
+                text = groupMember.name,
             )
             Text(
                 color = Color.White,
                 textAlign = TextAlign.Center,
-                text = stacks.joinToString(", "),
+                text = groupMember.stacks,
             )
             Text(
                 color = Color.White,
                 textAlign = TextAlign.Center,
-                text = languages.joinToString(", "),
+                text = groupMember.languages,
             )
         }
     }
@@ -66,9 +67,11 @@ fun GroupMemberCard(
 @Preview(showBackground = true)
 @Composable
 private fun GroupMemberCardPreview() {
-    GroupMemberCard(
+    val groupMember = GroupMember(
         "Abc",
         listOf("Mobile", "Backend"),
         listOf("Kotlin", "Java")
     )
+
+    GroupMemberCard(groupMember)
 }
