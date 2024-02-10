@@ -18,7 +18,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun DeveloperCard() {
+fun DeveloperCard(
+    name: String, stacks: List<String>, languages: List<String>,
+) {
     ElevatedCard(
         elevation = CardDefaults.cardElevation(6.dp),
         colors = CardDefaults.elevatedCardColors(
@@ -37,9 +39,15 @@ fun DeveloperCard() {
                 tint = Color.White,
                 modifier = Modifier.size(64.dp)
             )
-            Text(color = Color.White, text = "<name>")
-            Text(color = Color.White, text = "<stacks>")
-            Text(color = Color.White, text = "<languages>")
+            Text(color = Color.White, text = name)
+            Text(
+                color = Color.White,
+                text = stacks.joinToString(", "),
+            )
+            Text(
+                color = Color.White,
+                text = languages.joinToString(", "),
+            )
         }
     }
 }
@@ -47,5 +55,9 @@ fun DeveloperCard() {
 @Preview(showBackground = true)
 @Composable
 private fun DeveloperCardPreview() {
-    DeveloperCard()
+    DeveloperCard(
+        "Abc",
+        listOf("Mobile", "Backend"),
+        listOf("Kotlin", "Java")
+    )
 }

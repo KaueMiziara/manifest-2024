@@ -24,8 +24,8 @@ fun DevelopersSection() {
         Row(
             horizontalArrangement = Arrangement.spacedBy(16.dp),
         ) {
-            DeveloperCard()
-            DeveloperCard()
+            DeveloperCard("", listOf(""), listOf(""))
+            DeveloperCard("", listOf(""), listOf(""))
         }
     }
 }
