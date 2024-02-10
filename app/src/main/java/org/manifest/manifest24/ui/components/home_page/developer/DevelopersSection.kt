@@ -24,7 +24,11 @@ fun DevelopersSection() {
         Row(
             horizontalArrangement = Arrangement.spacedBy(16.dp),
         ) {
-            DeveloperCard("", listOf(""), listOf(""))
+            DeveloperCard(
+                "Kauê Miziara",
+                listOf("Backend, Mobile"),
+                listOf("C, C++, Rust, Java, Kotlin, C#, Python"),
+            )
             DeveloperCard("", listOf(""), listOf(""))
         }
     }
