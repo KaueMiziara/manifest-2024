@@ -29,7 +29,6 @@ fun HomePage() {
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             AboutProjectSection()
-            PlaceholderPage()
             GroupMembersSection()
         }
     }
