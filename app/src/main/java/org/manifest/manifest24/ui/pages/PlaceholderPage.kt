@@ -6,17 +6,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
-fun PlaceholderPage() {
+fun PlaceholderPage(n: String) {
     Column {
-        Text(text = "Hello, world! 1")
-        Text(text = "Hello, world! 2")
-        Text(text = "Hello, world! 3")
-        Text(text = "Hello, world! 4")
+        Text(text = "Hello, world! $n")
     }
 }
 
 @Preview
 @Composable
 private fun PlaceholderPagePreview() {
-    PlaceholderPage()
+    PlaceholderPage("1")
 }
