@@ -1,0 +1,48 @@
+package org.manifest.manifest24.ui.navigation
+
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Warning
+import androidx.compose.material3.DrawerState
+import androidx.compose.material3.Icon
+import androidx.compose.material3.ModalDrawerSheet
+import androidx.compose.material3.NavigationDrawerItem
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
+
+@Composable
+fun NavigationDrawerSheet(scope: CoroutineScope, drawerState: DrawerState) {
+    val items = listOf(
+        NavigationItem("Home", Icons.Default.Home),
+        NavigationItem("Placeholder1", Icons.Default.Warning),
+        NavigationItem("Placeholder2", Icons.Default.Warning),
+    )
+
+    var selectedItemIndex by rememberSaveable {
+        mutableIntStateOf(0)
+    }
+
+    ModalDrawerSheet {
+        items.forEachIndexed { index, item ->
+            NavigationDrawerItem(
+                label = { Text(item.title) },
+                selected = index == selectedItemIndex,
+                icon = {
+                    Icon(imageVector = item.icon, contentDescription = item.title)
+                },
+                onClick = {
+                    scope.launch {
+                        selectedItemIndex = index
+                        drawerState.close()
+                    }
+                },
+            )
+        }
+    }
+}
