@@ -1,4 +1,4 @@
-package org.manifest.manifest24.ui.navigation
+package org.manifest.manifest24.ui.components.navigation_drawer
 
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.ModalNavigationDrawer
@@ -18,7 +18,7 @@ fun NavigationDrawer() {
         drawerContent = {
             NavigationDrawerSheet(scope = scope, drawerState = drawerState)
         },
-        drawerState = drawerState
+        drawerState = drawerState,
     ) {
         Scaffold(
             topBar = { ManifestAppBar(scope = scope, drawerState = drawerState) }

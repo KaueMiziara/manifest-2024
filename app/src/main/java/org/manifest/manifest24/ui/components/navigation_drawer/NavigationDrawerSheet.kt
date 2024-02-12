@@ -1,4 +1,4 @@
-package org.manifest.manifest24.ui.navigation
+package org.manifest.manifest24.ui.components.navigation_drawer
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
