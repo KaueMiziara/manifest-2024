@@ -1,6 +1,5 @@
 package org.manifest.manifest24.ui.navigation
 
-import android.annotation.SuppressLint
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.ModalDrawerSheet
 import androidx.compose.material3.ModalNavigationDrawer
@@ -12,8 +11,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import kotlinx.coroutines.launch
 import org.manifest.manifest24.ui.components.ManifestAppBar
+import org.manifest.manifest24.ui.pages.HomePage
 
-@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun NavigationDrawer() {
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
@@ -39,6 +38,8 @@ fun NavigationDrawer() {
     ) {
         Scaffold(
             topBar = { ManifestAppBar(scope = scope, drawerState = drawerState) }
-        ) { }
+        ) { innerPadding ->
+            HomePage(innerPadding)
+        }
     }
 }
