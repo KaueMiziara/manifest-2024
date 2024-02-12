@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
+import org.manifest.manifest24.ui.navigation.NavigationDrawer
 import org.manifest.manifest24.ui.pages.HomePage
 import org.manifest.manifest24.ui.theme.Manifest24Theme
 
@@ -19,7 +20,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    HomePage()
+                    NavigationDrawer()
                 }
             }
         }
