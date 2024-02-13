@@ -11,13 +11,17 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
 @Composable
-fun NavigationDrawerSheet(scope: CoroutineScope, drawerState: DrawerState) {
+fun NavigationDrawerSheet(
+    scope: CoroutineScope = rememberCoroutineScope(),
+    drawerState: DrawerState,
+) {
     val items = listOf(
         NavigationItem("Home", Icons.Default.Home),
         NavigationItem("Placeholder1", Icons.Default.Warning),
@@ -37,8 +41,8 @@ fun NavigationDrawerSheet(scope: CoroutineScope, drawerState: DrawerState) {
                     Icon(imageVector = item.icon, contentDescription = item.title)
                 },
                 onClick = {
+                    selectedItemIndex = index
                     scope.launch {
-                        selectedItemIndex = index
                         drawerState.close()
                     }
                 },

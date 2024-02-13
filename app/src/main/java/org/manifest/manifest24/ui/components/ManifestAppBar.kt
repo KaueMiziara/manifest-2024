@@ -18,7 +18,10 @@ import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ManifestAppBar(scope: CoroutineScope, drawerState: DrawerState) {
+fun ManifestAppBar(
+    scope: CoroutineScope = rememberCoroutineScope(),
+    drawerState: DrawerState,
+) {
     TopAppBar(
         title = { Text(text = "Manifest") },
         navigationIcon = {
