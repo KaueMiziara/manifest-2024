@@ -5,7 +5,10 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.DrawerState
+import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -16,10 +19,12 @@ import org.manifest.manifest24.ui.components.home_page.AboutProjectSection
 import org.manifest.manifest24.ui.components.home_page.group_member.GroupMembersSection
 
 @Composable
-fun HomePage() {
-    Scaffold(topBar = {
-        ManifestAppBar()
-    }) { innerPadding ->
+fun HomePage(drawerState: DrawerState) {
+    Scaffold(
+        topBar = {
+            ManifestAppBar(drawerState = drawerState)
+        }
+    ) { innerPadding ->
         Column(
             modifier = Modifier
                 .padding(innerPadding)
@@ -34,8 +39,10 @@ fun HomePage() {
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 private fun HomePagePreview() {
-    HomePage()
+    val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
+
+    HomePage(drawerState)
 }
