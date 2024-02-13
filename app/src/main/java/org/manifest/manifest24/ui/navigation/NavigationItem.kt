@@ -1,4 +1,4 @@
-package org.manifest.manifest24.ui.components.navigation_drawer
+package org.manifest.manifest24.ui.navigation
 
 import androidx.compose.ui.graphics.vector.ImageVector
 
