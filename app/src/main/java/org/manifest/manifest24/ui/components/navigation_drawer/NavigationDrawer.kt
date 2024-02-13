@@ -8,6 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import org.manifest.manifest24.ui.navigation.NavRoute
 import org.manifest.manifest24.ui.pages.HomePage
 import org.manifest.manifest24.ui.pages.PlaceholderPage
 
@@ -23,11 +24,11 @@ fun NavigationDrawer(
             NavigationDrawerSheet(drawerState = drawerState, navController = navController)
         },
     ) {
-        NavHost(navController = navController, startDestination = "home") {
-            composable("home") {
+        NavHost(navController = navController, startDestination = NavRoute.Home.route) {
+            composable(NavRoute.Home.route) {
                 HomePage(drawerState = drawerState)
             }
-            composable("placeholder") {
+            composable(NavRoute.Placeholder.route) {
                 PlaceholderPage(drawerState = drawerState, n = "A")
             }
         }

@@ -17,6 +17,7 @@ import androidx.compose.runtime.setValue
 import androidx.navigation.NavController
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
+import org.manifest.manifest24.ui.navigation.NavRoute
 
 @Composable
 fun NavigationDrawerSheet(
@@ -25,8 +26,8 @@ fun NavigationDrawerSheet(
     navController: NavController,
 ) {
     val items = listOf(
-        NavigationItem("Home", "home", Icons.Default.Home),
-        NavigationItem("Placeholder1", "placeholder", Icons.Default.Warning),
+        NavigationItem("Home", NavRoute.Home.route, Icons.Default.Home),
+        NavigationItem("Placeholder1", NavRoute.Placeholder.route, Icons.Default.Warning),
     )
 
     var selectedItemIndex by rememberSaveable {
