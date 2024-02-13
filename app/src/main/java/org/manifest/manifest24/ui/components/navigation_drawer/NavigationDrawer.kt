@@ -27,7 +27,6 @@ fun NavigationDrawer(
     val items = listOf(
         NavigationItem("Home", NavRoute.Home.route, Icons.Default.Home),
         NavigationItem("Map", NavRoute.Map.route, Icons.Default.LocationOn),
-        NavigationItem("Placeholder", NavRoute.Placeholder.route, Icons.Default.Warning),
     )
 
     ModalNavigationDrawer(
@@ -46,9 +45,6 @@ fun NavigationDrawer(
             }
             composable(NavRoute.Map.route) {
                 MapPage(drawerState = drawerState)
-            }
-            composable(NavRoute.Placeholder.route) {
-                PlaceholderPage(drawerState = drawerState, n = "A")
             }
         }
     }
