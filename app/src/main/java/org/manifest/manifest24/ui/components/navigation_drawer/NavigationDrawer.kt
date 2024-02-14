@@ -30,6 +30,7 @@ fun NavigationDrawer(
     )
 
     ModalNavigationDrawer(
+        gesturesEnabled = false,
         drawerState = drawerState,
         drawerContent = {
             NavigationDrawerSheet(
