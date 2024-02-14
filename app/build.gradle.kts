@@ -71,4 +71,8 @@ dependencies {
 
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+    // OSMdroid
+    implementation("org.osmdroid:osmdroid-android:6.1.16")
+    implementation("tech.utsmankece:osm-android-compose:0.0.5")
 }
