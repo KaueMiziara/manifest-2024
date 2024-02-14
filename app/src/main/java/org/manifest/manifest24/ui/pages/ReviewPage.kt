@@ -15,7 +15,7 @@ import org.manifest.manifest24.ui.components.ManifestAppBar
 import org.osmdroid.util.GeoPoint
 
 @Composable
-fun MapPage(drawerState: DrawerState) {
+fun ReviewPage(drawerState: DrawerState) {
     Scaffold(
         topBar = { ManifestAppBar(drawerState = drawerState) }
     ) {
@@ -33,8 +33,8 @@ fun MapPage(drawerState: DrawerState) {
 
 @Preview
 @Composable
-fun MapPagePreview() {
+fun ReviewPagePreview() {
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
 
-    MapPage(drawerState)
+    ReviewPage(drawerState)
 }

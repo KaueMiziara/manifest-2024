@@ -3,7 +3,6 @@ package org.manifest.manifest24.ui.components.navigation_drawer
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.LocationOn
-import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material3.DrawerState
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.ModalNavigationDrawer
@@ -16,8 +15,7 @@ import androidx.navigation.compose.rememberNavController
 import org.manifest.manifest24.ui.navigation.NavRoute
 import org.manifest.manifest24.ui.navigation.NavigationItem
 import org.manifest.manifest24.ui.pages.HomePage
-import org.manifest.manifest24.ui.pages.MapPage
-import org.manifest.manifest24.ui.pages.PlaceholderPage
+import org.manifest.manifest24.ui.pages.ReviewPage
 
 @Composable
 fun NavigationDrawer(
@@ -45,7 +43,7 @@ fun NavigationDrawer(
                 HomePage(drawerState = drawerState)
             }
             composable(NavRoute.Map.route) {
-                MapPage(drawerState = drawerState)
+                ReviewPage(drawerState = drawerState)
             }
         }
     }
