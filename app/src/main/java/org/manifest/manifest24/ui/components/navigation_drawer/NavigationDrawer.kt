@@ -8,15 +8,14 @@ import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.ModalNavigationDrawer
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
-import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import org.manifest.manifest24.ui.navigation.NavRoute
 import org.manifest.manifest24.ui.navigation.NavigationItem
-import org.manifest.manifest24.ui.pages.HomePage
-import org.manifest.manifest24.ui.pages.ReviewPage
+import org.manifest.manifest24.ui.navigation.homePage
+import org.manifest.manifest24.ui.navigation.navigateTo
+import org.manifest.manifest24.ui.navigation.reviewPage
 
 @Composable
 fun NavigationDrawer(
@@ -35,8 +34,8 @@ fun NavigationDrawer(
             NavigationDrawerSheet(
                 drawerState = drawerState,
                 navItems = items,
-                onNavigationItemClick = {
-                    navController.navigate(it.route)
+                onNavigationItemClick = { item ->
+                    navController.navigateTo(item)
                 }
             )
         },
@@ -45,17 +44,5 @@ fun NavigationDrawer(
             homePage(drawerState)
             reviewPage(drawerState)
         }
-    }
-}
-
-private fun NavGraphBuilder.homePage(drawerState: DrawerState) {
-    composable(NavRoute.Home.route) {
-        HomePage(drawerState = drawerState)
-    }
-}
-
-private fun NavGraphBuilder.reviewPage(drawerState: DrawerState) {
-    composable(NavRoute.Map.route) {
-        ReviewPage(drawerState = drawerState)
     }
 }
