@@ -4,6 +4,7 @@ import androidx.compose.material3.DrawerState
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
+import androidx.navigation.navOptions
 import org.manifest.manifest24.ui.pages.HomePage
 import org.manifest.manifest24.ui.pages.ReviewPage
 
@@ -20,5 +21,9 @@ fun NavGraphBuilder.reviewPage(drawerState: DrawerState) {
 }
 
 fun NavHostController.navigateTo(item: NavigationItem) {
-    navigate(item.route)
+    navigate(item.route, navOptions {
+        popUpTo(item.route) {
+            inclusive = true
+        }
+    })
 }
