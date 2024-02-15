@@ -34,8 +34,10 @@ fun NavigationDrawer(
         drawerContent = {
             NavigationDrawerSheet(
                 drawerState = drawerState,
-                navController = navController,
                 navItems = items,
+                onNavigationItemClick = {
+                    navController.navigate(it.route)
+                }
             )
         },
     ) {

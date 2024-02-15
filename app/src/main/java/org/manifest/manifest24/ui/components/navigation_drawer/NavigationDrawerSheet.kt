@@ -11,7 +11,6 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
-import androidx.navigation.NavController
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import org.manifest.manifest24.ui.navigation.NavigationItem
@@ -20,8 +19,8 @@ import org.manifest.manifest24.ui.navigation.NavigationItem
 fun NavigationDrawerSheet(
     scope: CoroutineScope = rememberCoroutineScope(),
     drawerState: DrawerState,
-    navController: NavController,
     navItems: List<NavigationItem>,
+    onNavigationItemClick: (item: NavigationItem) -> Unit,
 ) {
     var selectedItemIndex by rememberSaveable {
         mutableIntStateOf(0)
@@ -38,7 +37,7 @@ fun NavigationDrawerSheet(
                 onClick = {
                     selectedItemIndex = index
                     scope.launch {
-                        navController.navigate(item.route)
+                        onNavigationItemClick(item)
                         drawerState.close()
                     }
                 },
