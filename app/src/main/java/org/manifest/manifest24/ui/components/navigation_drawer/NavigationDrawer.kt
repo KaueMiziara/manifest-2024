@@ -8,6 +8,7 @@ import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.ModalNavigationDrawer
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
+import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -39,12 +40,20 @@ fun NavigationDrawer(
         },
     ) {
         NavHost(navController = navController, startDestination = NavRoute.Home.route) {
-            composable(NavRoute.Home.route) {
-                HomePage(drawerState = drawerState)
-            }
-            composable(NavRoute.Map.route) {
-                ReviewPage(drawerState = drawerState)
-            }
+            homePage(drawerState)
+            reviewPage(drawerState)
         }
+    }
+}
+
+private fun NavGraphBuilder.homePage(drawerState: DrawerState) {
+    composable(NavRoute.Home.route) {
+        HomePage(drawerState = drawerState)
+    }
+}
+
+private fun NavGraphBuilder.reviewPage(drawerState: DrawerState) {
+    composable(NavRoute.Map.route) {
+        ReviewPage(drawerState = drawerState)
     }
 }
