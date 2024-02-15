@@ -10,12 +10,12 @@ import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import org.manifest.manifest24.ui.navigation.NavRoute
 import org.manifest.manifest24.ui.navigation.NavigationItem
-import org.manifest.manifest24.ui.pages.HomePage
-import org.manifest.manifest24.ui.pages.ReviewPage
+import org.manifest.manifest24.ui.navigation.homePage
+import org.manifest.manifest24.ui.navigation.navigateTo
+import org.manifest.manifest24.ui.navigation.reviewPage
 
 @Composable
 fun NavigationDrawer(
@@ -33,18 +33,16 @@ fun NavigationDrawer(
         drawerContent = {
             NavigationDrawerSheet(
                 drawerState = drawerState,
-                navController = navController,
                 navItems = items,
+                onNavigationItemClick = { item ->
+                    navController.navigateTo(item)
+                }
             )
         },
     ) {
         NavHost(navController = navController, startDestination = NavRoute.Home.route) {
-            composable(NavRoute.Home.route) {
-                HomePage(drawerState = drawerState)
-            }
-            composable(NavRoute.Map.route) {
-                ReviewPage(drawerState = drawerState)
-            }
+            homePage(drawerState)
+            reviewPage(drawerState)
         }
     }
 }
