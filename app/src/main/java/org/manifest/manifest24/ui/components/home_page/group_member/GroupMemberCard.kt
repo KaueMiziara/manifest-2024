@@ -19,7 +19,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import org.manifest.manifest24.models.GroupMember
+import org.manifest.manifest24.data.models.GroupMember
 
 @Composable
 fun GroupMemberCard(

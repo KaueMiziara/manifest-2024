@@ -1,4 +1,4 @@
-package org.manifest.manifest24.models
+package org.manifest.manifest24.data.models
 
 import org.manifest.manifest24.extensions.formatAsString
 

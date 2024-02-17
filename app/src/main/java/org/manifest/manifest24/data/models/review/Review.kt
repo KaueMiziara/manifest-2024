@@ -1,4 +1,4 @@
-package org.manifest.manifest24.models.review
+package org.manifest.manifest24.data.models.review
 
 data class Review(
     val id: Int,
