@@ -1,6 +1,6 @@
 package org.manifest.manifest24.data.models
 
-import org.manifest.manifest24.infra.extensions.formatAsString
+import org.manifest.manifest24.extensions.formatAsString
 
 data class GroupMember(
     val name: String,
