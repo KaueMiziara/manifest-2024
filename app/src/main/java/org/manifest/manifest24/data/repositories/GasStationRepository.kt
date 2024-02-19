@@ -4,8 +4,9 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import org.manifest.manifest24.data.dtos.GasStationResponse
 import org.manifest.manifest24.network.GasStationApiService
+import javax.inject.Inject
 
-class GasStationRepository(
+class GasStationRepository @Inject constructor(
     private val apiService: GasStationApiService,
 ) : IGasStationRepository {
     override suspend fun findGasStationsNearestTo(

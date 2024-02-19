@@ -2,6 +2,7 @@ package org.manifest.manifest24.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.collectLatest
@@ -9,10 +10,13 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import org.manifest.manifest24.data.dtos.GasStationResponse
 import org.manifest.manifest24.data.repositories.IGasStationRepository
+import javax.inject.Inject
 
-class MapViewModel(
-    private val gasStationRepository: IGasStationRepository
-) : ViewModel() {
+@HiltViewModel
+class MapViewModel @Inject constructor(): ViewModel() {
+    @Inject
+    lateinit var gasStationRepository: IGasStationRepository
+
     private val _gasStations = MutableStateFlow<List<GasStationResponse>>(emptyList())
     val gasStations = _gasStations.asStateFlow()
 

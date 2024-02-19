@@ -11,8 +11,4 @@ interface GasStationApiService {
         @Query("lng") lng: Double,
         @Query("limit") limit: Int,
     ): ApiResponse
-
-    companion object {
-        const val BASE_URL = "https://shellgsllocator.geoapp.me/api/v2/"
-    }
 }
