@@ -75,8 +75,8 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
     // Dagger Hilt
-    implementation("com.google.dagger:hilt-android:2.45")
-    kapt("com.google.dagger:hilt-android-compiler:2.44")
+    implementation("com.google.dagger:hilt-android:2.50")
+    kapt("com.google.dagger:hilt-compiler:2.50")
 
     // OSMdroid
     implementation("org.osmdroid:osmdroid-android:6.1.16")
@@ -85,7 +85,6 @@ dependencies {
     // Retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation("com.squareup.okhttp3:okhttp:4.11.0")
     implementation("com.squareup.okhttp3:logging-interceptor:4.10.0")
 }
 
